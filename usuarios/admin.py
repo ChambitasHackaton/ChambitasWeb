@@ -44,10 +44,10 @@ class UserChangeForm(forms.ModelForm):
 class MyUserAdmin(UserAdmin):
     form = UserChangeForm
     add_form = UserCreationForm
-    list_display = ('email','is_active','first_name','is_staff','telephone','delegacion','zip_code','credencial', 'oficio')
+    list_display = ('email','is_active','first_name','is_staff','telephone','delegacion','zip_code','oficio', 'credencial')
     list_filter = ('is_staff', 'is_superuser')
     fieldsets = (
-        (None, {'fields': ('email', 'password','first_name','telephone','delegacion','zip_code','credencial','oficio' )}),
+        (None, {'fields': ('email', 'password','first_name','telephone','delegacion','zip_code','oficio', 'credencial' )}),
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser',)}),
     )
 
