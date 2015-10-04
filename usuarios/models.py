@@ -19,8 +19,8 @@ class MyUserManager(BaseUserManager):
         user.set_password(password)
         user.save(using=self._db)
         return user
-    def create_user(self, email, oficio, password=None):
-        return self._create_user(email, password, oficio, False, True, False)
+    def create_user(self, email,password=None):
+        return self._create_user(email, password, False, True, False)
 
     def create_superuser(self, email, password):
         return self._create_user(email, password, True, True, True)
@@ -51,7 +51,7 @@ class MyUser(AbstractBaseUser):
     telephone = models.IntegerField(null=True)
     delegacion = models.CharField(max_length=20, choices=DELEGACIONES_CHOICES)
     zip_code = models.IntegerField(null=True)
-    credencial = models.IntegerField(null=True)
+    credencial = models.CharField(null=True, max_length=18)
     oficio = models.ForeignKey(Oficio, blank=True, null=True)
     email = models.EmailField(
         verbose_name='email address',

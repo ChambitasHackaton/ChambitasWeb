@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'usuarios',
     'oficios',
     'buscador',
+    'contrataciones',
 )
 
 MIDDLEWARE_CLASSES = (
