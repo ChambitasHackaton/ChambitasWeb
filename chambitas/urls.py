@@ -13,3 +13,5 @@ urlpatterns = [
     url(r'^logout/', logout, name='logout'),
     url(r'^signup/$', signup, name='signup'),
     url(r'^search/', search_results, name='search_results'),
+]
+
