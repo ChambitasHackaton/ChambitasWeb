@@ -51,7 +51,7 @@ class MyUser(AbstractBaseUser):
     telephone = models.IntegerField(null=True)
     delegacion = models.CharField(max_length=20, choices=DELEGACIONES_CHOICES)
     zip_code = models.IntegerField(null=True)
-    credencial = models.IntegerField(null=True)
+    credencial = models.CharField(null=True, max_length=18)
     oficio = models.ForeignKey(Oficio, blank=True, null=True)
     email = models.EmailField(
         verbose_name='email address',

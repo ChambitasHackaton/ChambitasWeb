@@ -10,11 +10,21 @@ from usuarios.admin import UserCreationForm
 class Index(TemplateView):
 	template_name = 'index.html'
 
+	def get_context_data(self, **kwargs):
+		context = super(Index, self).get_context_data(**kwargs)
+		context['users'] = MyUser.objects.all()
+		return context
+
 def login(request):
 	if request.method == 'POST':		
 		email = request.POST['email']
 		password = request.POST['password']
 		user = authenticate(email=email, password=password)
+		if user:
+			auth_login(request, user)
+			return render(request,'index.html')
+		else:
+			return render(request, "login.html")
 	else:
 		return render(request, "login.html")
 
@@ -24,8 +34,10 @@ def logout(request):
 
 def signup(request):
 	form = UserCreationForm(request.POST or None)
+	print form
 
 	if form.is_valid():
 		form.save()
+
 
 	return render(request, 'signup.html', {'form' : form})
