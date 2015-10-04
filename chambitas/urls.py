@@ -8,7 +8,7 @@ from buscador.views import search_results
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', Index.as_view(), name='home'),
+    url(r'^$', Index.as_view(), name='index'),
     url(r'^accounts/login/', login, name="login"),
     url(r'^logout/', logout, name='logout'),
     url(r'^signup/$', signup, name='signup'),

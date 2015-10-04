@@ -13,7 +13,7 @@ class UserCreationForm(forms.ModelForm):
 
     class Meta:
         model = MyUser
-        fields = ('email','telephone','delegacion','zip_code','oficio','credencial','is_active','is_superuser','is_staff')
+        fields = ('email','telephone','delegacion','zip_code','oficio','credencial')
 
     def clean_password2(self):
         password1 = self.cleaned_data.get("password1")

@@ -28,13 +28,13 @@ class MyUserManager(BaseUserManager):
 class MyUser(AbstractBaseUser):
 
     DELEGACIONES_CHOICES = (
-        ('AO', 'alvaro obregon'),
+        ('AO', 'Alvaro Obregon'),
         ('AZ', 'Azcapotzalco'),
         ('BJ', 'Benito Juarez'),
         ('CO', 'Coyoacan'),
         ('CM', 'Cuajimalpa de Morelos'),
         ('CU', 'Cuauhtemoc'),	
-        ('GM', 'Gustavo A. Madero'),
+        ('GM', 'Gustavo A Madero'),
         ('IZ', 'Iztacalco'),
         ('IZ', 'Iztapalapa'),
         ('MC', 'La Magdalena Contreras'),
@@ -50,7 +50,7 @@ class MyUser(AbstractBaseUser):
     last_name = models.CharField(max_length=200, blank=True, help_text="The last name of the user.")
     telephone = models.IntegerField(null=True)
     delegacion = models.CharField(max_length=20, choices=DELEGACIONES_CHOICES)
-    zip_code = models.IntegerField(null=True)
+    zip_code = models.CharField(max_length=5)
     credencial = models.CharField(null=True, max_length=18)
     oficio = models.ForeignKey(Oficio, blank=True, null=True)
     email = models.EmailField(
