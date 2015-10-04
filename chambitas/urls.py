@@ -3,7 +3,7 @@ from django.conf import settings
 from django.contrib import admin
 from usuarios.views import Index
 from usuarios.views import logout, login, signup
-from buscador.views import search_results
+from buscador.views import SearchResults
 
 
 urlpatterns = [
@@ -12,5 +12,5 @@ urlpatterns = [
     url(r'^accounts/login/', login, name="login"),
     url(r'^logout/', logout, name='logout'),
     url(r'^signup/$', signup, name='signup'),
-    url(r'^search/', search_results, name='search_results'),
+    url(r'^search/', SearchResults.as_view(), name='search_results'),
 ]
