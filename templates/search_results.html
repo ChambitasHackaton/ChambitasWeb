@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Resultados de busqueda</title>
+<meta charset="UTF-8">
+<title>Resultados de busqueda</title>
+<style>
+img {
+	border-radius:100px;
+}
+
+.ok{
+	background-color:lightgrey;
+	width:50%;
+}
+
+.ok2{
+	background-color:lightblue;
+	width:50%;
+}
+h2 {
+	display:inline-block;
+}
+</style>
 </head>
 <body>
-<p>Resultados</p>
+
+<h1>Resultados</h1>
+
 {% for usuario in usuarios %}
-	{{usuario.first_name}}
-	{{usuario.last_name}}
+<div class="ok">
+<img src="http://placehold.it/200x200">
+</div>
+
+<div class="ok2">
+	<h2>usuario: {{usuario.first_name}} {{usuario.last_name}}</h2>
+	<h2>precio: ???</h2>
+</div>
 {% empty %}
 	No hay usuarios
 {% endfor %}

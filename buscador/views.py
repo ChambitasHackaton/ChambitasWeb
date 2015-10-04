@@ -9,10 +9,12 @@ class SearchResults(TemplateView):
 	def get_context_data(self, **kwargs):
 		context = super(SearchResults, self).get_context_data(**kwargs)
 		parameters = {
-			'delegacion': self.request.GET.get('delegacion').replace('-', ' ').title(),
+			'delegacion': self.request.GET.get('delegacion').upper().replace('-', ' '),
 			'zip_code': self.request.GET.get('cp'),
 			'oficio': self.request.GET.get('oficio').upper().replace('-', ' '),
+		
 		}
+		print (parameters)
 		try:
 			oficio = Oficio.objects.only('id').get(oficio = parameters['oficio']).id
 			usuarios = MyUser.objects.all().filter(

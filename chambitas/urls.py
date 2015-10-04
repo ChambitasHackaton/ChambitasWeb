@@ -12,5 +12,5 @@ urlpatterns = [
     url(r'^accounts/login/', login, name="login"),
     url(r'^logout/', logout, name='logout'),
     url(r'^signup/$', signup, name='signup'),
-    url(r'^search/', SearchResults.as_view(), name='search_results'),
+    url(r'^search', SearchResults.as_view(), name='search_results'),
 ]

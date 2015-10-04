@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'oficios',
     'buscador',
     'contrataciones',
+    'rest_framework',
 )
 
 MIDDLEWARE_CLASSES = (

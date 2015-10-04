@@ -1,16 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style>
+input, select {
+	display:block;
+	margin: 10px auto;
+}
+</style>
 	<meta charset="UTF-8">
 	<title>Document</title>
 </head>
 <body>
 <p>chambitas</p>
 {% for user in users %}
-{{user}}
+<p><a href='/users/{{user.id}}/'>{{user.first_name}}</a></p>
 {% endfor %}
 <p><a href="/logout">logout</a></p>
 <p><a href="/accounts/login">login</a></p>
 <p><a href="/signup">signup</a></p>
+
+<form action='search' method='get'>
+<select name='delegacion'>
+<option value="AO">Alvaro Obregon</option>
+<option value="AZ">Azcapotzalco</option>
+<option value="BJ">Benito Juarez</option>
+<option value="CO">Coyoacan</option>
+<option value="CM">Cuajimalpa De Morelos</option>
+<option value="CU">Cuauhtemoc</option>
+<option value="GM">Gustavo A Madero</option>
+<option value="IZ">Iztacalco</option>
+<option value="IZA">Iztapalapa</option>
+<option value="MC">La Magdalena Contrera</option>
+<option value="MH">Miguel Hidalgo</option>
+<option value="MA">Milpa Alt</option>
+<option value="TL">Tlahuac</option>
+<option value="TLA">Tlalpan</option>
+<option value="VE">Venustiano Carranza</option>
+<option value="XO">Xochimilco</option>
+</select>
+<select name='oficio'>
+		<option value="JARDINERIA">Jardineria</option>
+		<option value="LIMPIEZA">Limpieza</option>
+		<option value="PLOMERIA Y ELECTRICIDAD">Plomeria y electricidad</option>
+		<option value="MASCOTAS">Mascotas</option
+		<option value="ELECTRONICA">Electronica</option>
+		<option value="ALBANILERIA">Albanileria</option>
+		<option value="DECORACIONES">Decoraciones</option>
+		<option value="CARPINTERIA">Carpinteria</option>
+		<option value="HERRERIA">Herreria</option>
+		</select>
+	<input type='text' name='cp' value='codigo postal'>
+	<input type='submit' value='search'>
+	</form>
 </body>
 </html>
