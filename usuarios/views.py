@@ -41,3 +41,9 @@ def signup(request):
 
 
 	return render(request, 'signup.html', {'form' : form})
+
+def user_profile(request, id):
+	instance = MyUser.objects.get(id=id)
+
+
+	return render(request, 'user_profile.html', {'instance': instance})

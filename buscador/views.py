@@ -14,7 +14,6 @@ class SearchResults(TemplateView):
 			'oficio': self.request.GET.get('oficio').upper().replace('-', ' '),
 		
 		}
-		print (parameters)
 		try:
 			oficio = Oficio.objects.only('id').get(oficio = parameters['oficio']).id
 			usuarios = MyUser.objects.all().filter(
