@@ -1,25 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<style>
-input, select {
-	display:block;
-	margin: 10px auto;
-}
-</style>
-	<meta charset="UTF-8">
-	<title>Document</title>
-</head>
-<body>
-<p>chambitas</p>
-{% for user in users %}
-<p><a href='/users/{{user.id}}/'>{{user.first_name}}</a></p>
-{% endfor %}
-<p><a href="/logout">logout</a></p>
-<p><a href="/accounts/login">login</a></p>
-<p><a href="/signup">signup</a></p>
+{% extends 'bases/base.html' %}
+{% load staticfiles %}
+{% block content %}
 
+<div class='col-md-offset-5'>
 <form action='search' method='get'>
+<div class="form-group">
 <select name='delegacion'>
 <option value="AO">Alvaro Obregon</option>
 <option value="AZ">Azcapotzalco</option>
@@ -38,6 +23,8 @@ input, select {
 <option value="VE">Venustiano Carranza</option>
 <option value="XO">Xochimilco</option>
 </select>
+</div>
+<div class="form-group">
 <select name='oficio'>
 		<option value="JARDINERIA">Jardineria</option>
 		<option value="LIMPIEZA">Limpieza</option>
@@ -49,8 +36,11 @@ input, select {
 		<option value="CARPINTERIA">Carpinteria</option>
 		<option value="HERRERIA">Herreria</option>
 		</select>
+		</div>
+<div class="form-group">
 	<input type='text' name='cp' value='codigo postal'>
-	<input type='submit' value='search'>
+</div>
+	<input type='submit' value='search' class='btn btn-default'>
+
 	</form>
-</body>
-</html>
+	{% endblock %}

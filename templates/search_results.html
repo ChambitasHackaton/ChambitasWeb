@@ -1,34 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Resultados de busqueda</title>
-<style>
-img {
-	border-radius:100px;
-}
-
-.ok{
-	background-color:lightgrey;
-	width:50%;
-}
-
-.ok2{
-	background-color:lightblue;
-	width:50%;
-}
-h2 {
-	display:inline-block;
-}
-</style>
-</head>
-<body>
+{% extends 'bases/base.html' %}
+{% load staticfiles %}
+{% block content %}
 
 <h1>Resultados</h1>
 
 {% for usuario in usuarios %}
 <div class="ok">
-<img src="http://placehold.it/200x200">
+<a href="/usuario/{{usuario.id}}"><img src="http://placehold.it/200x200"></a>
 </div>
 
 <div class="ok2">
@@ -38,5 +16,4 @@ h2 {
 {% empty %}
 	No hay usuarios
 {% endfor %}
-</body>
-</html>
+{% endblock %}

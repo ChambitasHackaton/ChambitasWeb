@@ -8,21 +8,22 @@ class SearchResults(TemplateView):
 	
 	def get_context_data(self, **kwargs):
 		context = super(SearchResults, self).get_context_data(**kwargs)
-		parameters = {
-			'delegacion': self.request.GET.get('delegacion').upper().replace('-', ' '),
-			'zip_code': self.request.GET.get('cp'),
-			'oficio': self.request.GET.get('oficio').upper().replace('-', ' '),
-		
-		}
-		print (parameters)
-		try:
-			oficio = Oficio.objects.only('id').get(oficio = parameters['oficio']).id
-			usuarios = MyUser.objects.all().filter(
-				oficio = oficio,
-				delegacion = parameters['delegacion'],
-				zip_code = parameters['zip_code'],
-			)
-		except:
-			usuarios = []
+		if not self.request.GET.get('delegacion') or not self.request.GET.get('oficio') or not self.request.GET.get('cp'):
+			usuarios = MyUser.objects.all()
+		else:
+			parameters = {
+				'delegacion': self.request.GET.get('delegacion').replace('-', ' ').title(),
+				'zip_code': self.request.GET.get('cp'),
+				'oficio': self.request.GET.get('oficio').upper().replace('-', ' '),
+			}
+			try:
+				oficio = Oficio.objects.only('id').get(oficio = parameters['oficio']).id
+				usuarios = MyUser.objects.all().filter(
+					oficio = oficio,
+					delegacion = parameters['delegacion'],
+					zip_code = parameters['zip_code'],
+				)
+			except:
+				usuarios = []
 		context['usuarios'] = usuarios
 		return context
