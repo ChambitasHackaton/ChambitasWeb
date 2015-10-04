@@ -6,7 +6,12 @@
 </head>
 <body>
 <p>chambitas</p>
-holi
-	
+{% for usuario in usuarios %}
+	{{usuario.first_name}}
+	{{usuario.last_name}}
+
+{% empty %}
+	No hay usuarios
+{% endfor %}
 </body>
 </html>
