@@ -13,7 +13,7 @@ class UserCreationForm(forms.ModelForm):
 
     class Meta:
         model = MyUser
-        fields = ('email','telephone','delegacion','zip_code','oficio','credencial')
+        fields = ('email','first_name','last_name','telephone','delegacion','zip_code','oficio','credencial')
 
     def clean_password2(self):
         password1 = self.cleaned_data.get("password1")
@@ -44,8 +44,9 @@ class UserChangeForm(forms.ModelForm):
 class MyUserAdmin(UserAdmin):
     form = UserChangeForm
     add_form = UserCreationForm
-    list_display = ('email','is_active','first_name','is_staff','telephone','delegacion','zip_code','oficio', 'credencial')
-    list_filter = ('is_staff', 'is_superuser')
+    list_display = ('first_name', 'email','telephone','delegacion','zip_code','oficio', 'credencial')
+    list_filter = ('oficio',)
+    list_display_links = ('first_name',)
     fieldsets = (
         (None, {'fields': ('email', 'password','first_name','telephone','delegacion','zip_code','oficio', 'credencial' )}),
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser',)}),
@@ -61,5 +62,6 @@ class MyUserAdmin(UserAdmin):
     ordering = ('email',)
     filter_horizontal = ()
 
+    
 admin.site.register(MyUser, MyUserAdmin)
 admin.site.unregister(Group)
