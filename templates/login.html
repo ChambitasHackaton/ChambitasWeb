@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+			<form method="POST">
+	  {% csrf_token %}
+
+			<input type="text" placeholder="email" class="form-control" name="email">
+
+			<input type="text" placeholder="Contraseña" class="form-control" name="password">
+
+		  <input type="submit" value="Iniciar sesión" class="form-control">
+		  
+	</form>
+
+
+		</body>
+</html>

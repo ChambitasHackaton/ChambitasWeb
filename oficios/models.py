@@ -17,3 +17,5 @@ class Oficio(models.Model):
 	)
 	oficio = models.CharField(max_length=20, choices=OFICIOS_CHOICES)
 
+	def __unicode__(self):
+		return self.oficio
