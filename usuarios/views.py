@@ -22,7 +22,7 @@ def login(request):
 		user = authenticate(email=email, password=password)
 		if user:
 			auth_login(request, user)
-			return render(request,'index.html')
+			return redirect(reverse('index'))
 		else:
 			return render(request, "login.html")
 	else:
@@ -30,14 +30,14 @@ def login(request):
 
 def logout(request):
 	auth_logout(request)
-	return redirect(reverse('signup.html'))
+	return redirect(reverse('index'))
 
 def signup(request):
 	form = UserCreationForm(request.POST or None)
-	print form
 
 	if form.is_valid():
 		form.save()
+		return redirect(reverse('index'))
 
 
 	return render(request, 'signup.html', {'form' : form})
