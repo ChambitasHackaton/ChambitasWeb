@@ -10,7 +10,10 @@ def search_results(request):
 		'codigo_postal': request.GET.get('cp'),
 		'oficio': request.GET.get('oficio'),
 	}
-	usuarios = MyUser.objects.all().filter(oficio=1)
+	oficio = Oficio.objects.all().filter(oficio = parameters['oficio'])
+	usuarios = MyUser.objects.all().filter(oficio = oficio,
+											zip_code = parameters['codigo_postal'],
+											delegacion = parameters['delegacion'],)
 	print(usuarios)
 	if not request.GET.get('aa'):
 		print('ups')
