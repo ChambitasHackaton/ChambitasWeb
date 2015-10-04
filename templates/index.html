@@ -1,46 +1,45 @@
 {% extends 'bases/base.html' %}
 {% load staticfiles %}
 {% block content %}
-
-<div class='col-md-offset-5'>
+<div class='row'>
+<div class='col-lg-4 col-lg-offset-4'>
 <form action='search' method='get'>
-<div class="form-group">
-<select name='delegacion'>
-<option value="AO">Alvaro Obregon</option>
-<option value="AZ">Azcapotzalco</option>
-<option value="BJ">Benito Juarez</option>
-<option value="CO">Coyoacan</option>
-<option value="CM">Cuajimalpa De Morelos</option>
-<option value="CU">Cuauhtemoc</option>
-<option value="GM">Gustavo A Madero</option>
-<option value="IZ">Iztacalco</option>
-<option value="IZA">Iztapalapa</option>
-<option value="MC">La Magdalena Contrera</option>
-<option value="MH">Miguel Hidalgo</option>
-<option value="MA">Milpa Alt</option>
-<option value="TL">Tlahuac</option>
-<option value="TLA">Tlalpan</option>
-<option value="VE">Venustiano Carranza</option>
-<option value="XO">Xochimilco</option>
+<select class="form-control ok" name='delegacion'>
+	<option value="AO">Alvaro Obregon</option>
+	<option value="AZ">Azcapotzalco</option>
+	<option value="BJ">Benito Juarez</option>
+	<option value="CO">Coyoacan</option>
+	<option value="CM">Cuajimalpa De Morelos</option>
+	<option value="CU">Cuauhtemoc</option>
+	<option value="GM">Gustavo A Madero</option>
+	<option value="IZ">Iztacalco</option>
+	<option value="IZA">Iztapalapa</option>
+	<option value="MC">La Magdalena Contrera</option>
+	<option value="MH">Miguel Hidalgo</option>
+	<option value="MA">Milpa Alt</option>
+	<option value="TL">Tlahuac</option>
+	<option value="TLA">Tlalpan</option>
+	<option value="VE">Venustiano Carranza</option>
+	<option value="XO">Xochimilco</option>
 </select>
-</div>
-<div class="form-group">
-<select name='oficio'>
-		<option value="JARDINERIA">Jardineria</option>
-		<option value="LIMPIEZA">Limpieza</option>
-		<option value="PLOMERIA Y ELECTRICIDAD">Plomeria y electricidad</option>
-		<option value="MASCOTAS">Mascotas</option
-		<option value="ELECTRONICA">Electronica</option>
-		<option value="ALBANILERIA">Albanileria</option>
-		<option value="DECORACIONES">Decoraciones</option>
-		<option value="CARPINTERIA">Carpinteria</option>
-		<option value="HERRERIA">Herreria</option>
-		</select>
-		</div>
-<div class="form-group">
-	<input type='text' name='cp' value='codigo postal'>
-</div>
-	<input type='submit' value='search' class='btn btn-default'>
 
-	</form>
+<select name='oficio' class="form-control ok">
+	<option value="JARDINERIA">Jardineria</option>
+	<option value="LIMPIEZA">Limpieza</option>
+	<option value="PLOMERIA Y ELECTRICIDAD">Plomeria y electricidad</option>
+	<option value="MASCOTAS">Mascotas</option>
+	<option value="ELECTRONICA">Electronica</option>
+	<option value="ALBANILERIA">Albanileria</option>
+	<option value="DECORACIONES">Decoraciones</option>
+	<option value="CARPINTERIA">Carpinteria</option>
+	<option value="HERRERIA">Herreria</option>
+</select>
+
+<div class="form-group has-success has-feedback">
+<input id='inputSuccess2' maxlength='5' aria-describedby='inputSuccess2Status' type='text' class='form-control' name='cp' placeholder='Codigo postal'>
+</div>
+<input type='submit' class='form-control' value='search' class='btn btn-default'>
+</form>
+</div>
+</div>
 	{% endblock %}
