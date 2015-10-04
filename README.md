@@ -1,2 +1,1 @@
-# ChambitasAPI
-API
+# Chambitas
