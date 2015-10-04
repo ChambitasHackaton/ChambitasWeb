@@ -1,29 +1,50 @@
-{% extends 'bases/base.html' %}
+<!DOCTYPE html>
 {% load staticfiles %}
-{% block content %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chambitas</title>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+ </head>
+<body class='bg'>
+<nav class="navbar navbar-default">
+
+<ul class="nav navbar-nav navbar-left">
+<li><a href="home"><strong>Chambitas</strong></a></li>
+</ul>
+
+<ul class="nav navbar-nav navbar-right">
+<li><a href="signup">Sign Up</a></li>
+<li><a href="accounts/login">Login</a></li>
+<li><a href="logout">Log out</a></li>
+</ul>
+</nav>
+
+
 <div class='row'>
 <div class='col-lg-4 col-lg-offset-4'>
 <form action='search' method='get'>
-<select class="form-control ok" name='delegacion'>
-	<option value="AO">Alvaro Obregon</option>
-	<option value="AZ">Azcapotzalco</option>
-	<option value="BJ">Benito Juarez</option>
-	<option value="CO">Coyoacan</option>
-	<option value="CM">Cuajimalpa De Morelos</option>
-	<option value="CU">Cuauhtemoc</option>
-	<option value="GM">Gustavo A Madero</option>
-	<option value="IZ">Iztacalco</option>
-	<option value="IZA">Iztapalapa</option>
-	<option value="MC">La Magdalena Contrera</option>
-	<option value="MH">Miguel Hidalgo</option>
-	<option value="MA">Milpa Alt</option>
-	<option value="TL">Tlahuac</option>
-	<option value="TLA">Tlalpan</option>
-	<option value="VE">Venustiano Carranza</option>
-	<option value="XO">Xochimilco</option>
+<select class="form-control margin" name='delegacion'>
+	<option value="Alvaro-Obregon">Alvaro Obregon</option>
+	<option value="Azcapotzalco">Azcapotzalco</option>
+	<option value="Benito-Juarez">Benito Juarez</option>
+	<option value="Coyoacan">Coyoacan</option>
+	<option value="Cuajimalpa-De-Morelos">Cuajimalpa De Morelos</option>
+	<option value="Cuauhtemoc">Cuauhtemoc</option>
+	<option value="Gustavo-A-Madero">Gustavo A Madero</option>
+	<option value="Iztacalco">Iztacalco</option>
+	<option value="Iztapalapa">Iztapalapa</option>
+	<option value="La-Magdalena-Contrera">La Magdalena Contrera</option>
+	<option value="Miguel-Hidalgo">Miguel Hidalgo</option>
+	<option value="Milpa-Alt">Milpa Alt</option>
+	<option value="Tlahuac">Tlahuac</option>
+	<option value="Tlalpan">Tlalpan</option>
+	<option value="Venustiano-Carranza">Venustiano Carranza</option>
+	<option value="Xochimilco">Xochimilco</option>
 </select>
 
-<select name='oficio' class="form-control ok">
+<select name='oficio' class="form-control margin">
 	<option value="JARDINERIA">Jardineria</option>
 	<option value="LIMPIEZA">Limpieza</option>
 	<option value="PLOMERIA Y ELECTRICIDAD">Plomeria y electricidad</option>
@@ -38,8 +59,10 @@
 <div class="form-group has-success has-feedback">
 <input id='inputSuccess2' maxlength='5' aria-describedby='inputSuccess2Status' type='text' class='form-control' name='cp' placeholder='Codigo postal'>
 </div>
-<input type='submit' class='form-control' value='search' class='btn btn-default'>
+<input type='submit' class='form-control' value='Encuentra empleo cerca de ti' class='btn btn-default'>
 </form>
 </div>
 </div>
-	{% endblock %}
+
+</body>
+</html>

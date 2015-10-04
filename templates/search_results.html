@@ -2,16 +2,14 @@
 {% load staticfiles %}
 {% block content %}
 
+<div class='well center'>
 <h1>Resultados</h1>
-
-{% for usuario in usuarios %}
-<div class="ok">
-<a href="/usuario/{{usuario.id}}"><img src="http://placehold.it/200x200"></a>
 </div>
-
-<div class="ok2">
+{% for usuario in usuarios %}
+<div class="list well">
+<a href="/usuario/{{usuario.id}}"><img class='border' src="http://placehold.it/200x200"></a>
 	<h2>usuario: {{usuario.first_name}} {{usuario.last_name}}</h2>
-	<h2>precio: ???</h2>
+	<h2>precio: A tratar</h2>
 </div>
 {% empty %}
 	No hay usuarios

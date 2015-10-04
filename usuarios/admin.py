@@ -46,7 +46,7 @@ class MyUserAdmin(UserAdmin):
     add_form = UserCreationForm
     list_display = ('first_name', 'email','telephone','delegacion','zip_code','oficio', 'credencial')
     list_filter = ('oficio',)
-    list_display_links = ('first_name',)
+    list_display_links = ('email',)
     fieldsets = (
         (None, {'fields': ('email', 'password','first_name','telephone','delegacion','zip_code','oficio', 'credencial' )}),
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser',)}),

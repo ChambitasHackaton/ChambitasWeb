@@ -46,12 +46,12 @@ class MyUser(AbstractBaseUser):
         ('Xochimilco', 'Xochimilco'),
     )
 
-    first_name = models.CharField(max_length=200, blank=True, help_text="The first name of the user.")
-    last_name = models.CharField(max_length=200, blank=True, help_text="The last name of the user.")
+    first_name = models.CharField(max_length=200, blank=True)
+    last_name = models.CharField(max_length=200, blank=True)
     telephone = models.IntegerField(null=True)
-    delegacion = models.CharField(max_length=20, choices=DELEGACIONES_CHOICES)
+    delegacion = models.CharField(max_length=30, choices=DELEGACIONES_CHOICES)
     zip_code = models.CharField(max_length=5)
-    credencial = models.CharField(null=True, max_length=18)
+    credencial = models.CharField(null=True, max_length=18, help_text='Tu clave de lector')
     oficio = models.ForeignKey(Oficio, blank=True, null=True)
     email = models.EmailField(
         verbose_name='email address',
