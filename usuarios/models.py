@@ -28,22 +28,22 @@ class MyUserManager(BaseUserManager):
 class MyUser(AbstractBaseUser):
 
     DELEGACIONES_CHOICES = (
-        ('AO', 'Alvaro Obregon'),
-        ('AZ', 'Azcapotzalco'),
-        ('BJ', 'Benito Juarez'),
-        ('CO', 'Coyoacan'),
-        ('CM', 'Cuajimalpa De Morelos'),
-        ('CU', 'Cuauhtemoc'),	
-        ('GM', 'Gustavo A Madero'),
-        ('IZ', 'Iztacalco'),
-        ('IZ', 'Iztapalapa'),
-        ('MC', 'La Magdalena Contreras'),
-        ('MH', 'Miguel Hidalgo'),
-        ('MA', 'Milpa Alta'),
-        ('TL', 'Tlahuac'),
-        ('TLA', 'Tlalpan'),
-        ('VE', 'Venustiano Carranza'),
-        ('XO', 'Xochimilco'),
+        ('Alvaro Obregon', 'Alvaro Obregon'),
+        ('Azcapotzalco', 'Azcapotzalco'),
+        ('Benito Juarez', 'Benito Juarez'),
+        ('Coyoacan', 'Coyoacan'),
+        ('Cuajimalpa De Morelos', 'Cuajimalpa De Morelos'),
+        ('Cuauhtemoc', 'Cuauhtemoc'),	
+        ('Gustavo A Madero', 'Gustavo A. Madero'),
+        ('Iztacalco', 'Iztacalco'),
+        ('Iztapalapa', 'Iztapalapa'),
+        ('La Magdalena Contreras', 'La Magdalena Contreras'),
+        ('Miguel Hidalgo', 'Miguel Hidalgo'),
+        ('Milpa Alta', 'Milpa Alta'),
+        ('Tlahuac', 'Tlahuac'),
+        ('Tlalpan', 'Tlalpan'),
+        ('Venustiano Carranza', 'Venustiano Carranza'),
+        ('Xochimilco', 'Xochimilco'),
     )
 
     first_name = models.CharField(max_length=200, blank=True, help_text="The first name of the user.")
