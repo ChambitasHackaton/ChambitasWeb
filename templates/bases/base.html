@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chambitas</title>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+  <!--<link rel="stylesheet" href="{% static 'css/estilos.css' %}">-->
+ </head>
+
+<div class="container-fluid">
+<nav class="navbar navbar-default">
+
+<ul class="nav navbar-nav navbar-left mynav">
+<li><a href="/">Chambitas</a></li>
+</ul>
+
+<ul class="nav navbar-nav navbar-right">
+<li><a href="signup">Sign Up</a></li>
+<li><a href="accounts/login">Login</a></li>
+<li><a href="logout">Log out</a></li>
+</ul>
+</nav>
+
+{% block content %}
+
+{% endblock %}
+</body>
+</html>
