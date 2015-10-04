@@ -32,7 +32,7 @@ class MyUser(AbstractBaseUser):
         ('AZ', 'Azcapotzalco'),
         ('BJ', 'Benito Juarez'),
         ('CO', 'Coyoacan'),
-        ('CM', 'Cuajimalpa de Morelos'),
+        ('CM', 'Cuajimalpa De Morelos'),
         ('CU', 'Cuauhtemoc'),	
         ('GM', 'Gustavo A Madero'),
         ('IZ', 'Iztacalco'),
